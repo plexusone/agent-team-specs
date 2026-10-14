@@ -1,0 +1,10 @@
+{
+  "name": "agent-team-specs",
+  "version": "0.1.0",
+  "description": "Multi-agent team that defines product work: an initiative's specs and a phased roadmap of RMIs, recorded in VisionStudio",
+  "author": "plexusone",
+  "license": "MIT",
+  "repository": "https://github.com/plexusone/agent-team-specs",
+  "homepage": "https://github.com/plexusone/agent-team-specs",
+  "agents": "./agents/"
+}
