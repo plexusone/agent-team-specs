@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/plexusone/multi-agent-spec/main/schema/deployment/deployment.schema.json",
+  "team": "agent-team-specs",
+  "targets": [
+    {
+      "name": "dist-claude",
+      "platform": "claude-code",
+      "mode": "single-process",
+      "priority": "p1",
+      "output": "plugins/claude",
+      "config": {
+        "format": "markdown"
+      }
+    }
+  ]
+}
