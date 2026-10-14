@@ -17,14 +17,36 @@ format.
 ## Layout
 
 ```
-specs/
-└── agents/      # agent definitions (Markdown with YAML frontmatter)
+specs/                 # source of truth (multi-agent-spec)
+├── plugin.json        # plugin metadata
+├── agents/            # agent definitions (Markdown with YAML frontmatter)
+└── deployments/       # generation targets
+plugins/
+└── claude/            # generated Claude Code plugin; do not edit
+```
+
+## Claude Code
+
+`plugins/claude/` is generated from `specs/` with
+[assistantkit](https://github.com/plexusone/assistantkit). Regenerate it after
+changing a spec:
+
+```sh
+go run github.com/plexusone/assistantkit/cmd/assistantkit@v0.15.0 generate --specs=specs --target=local
+```
+
+To use the agents in a project, copy them into its `.claude/agents/`:
+
+```sh
+cp plugins/claude/agents/*.md /path/to/project/.claude/agents/
 ```
 
 ## Requirements
 
 The agents use the `visionstudio` MCP server (`visionstudio mcp`), pointed at
-a local VisionStudio database or a VisionStudio Cloud organization.
+a local VisionStudio database or a VisionStudio Cloud organization. Register
+it under the name `visionstudio`: the agents' tool lists name its tools as
+`mcp__visionstudio__<tool>`.
 
 ## License
 
