@@ -1,0 +1,31 @@
+# Agent Team: Specs
+
+A multi-agent team that defines product work: it turns a request into an
+initiative with its specs (PRD, TRD, PLAN) and a phased roadmap of roadmap
+items, recorded in [VisionStudio](https://github.com/ProductBuildersHQ/visionstudio).
+It defines work for an implementation team to execute; it does not write code.
+
+Definitions use the [multi-agent-spec](https://github.com/plexusone/multi-agent-spec)
+format.
+
+## Agents
+
+| Agent | Role |
+|---|---|
+| [`spec-writer`](specs/agents/spec-writer.md) | Creates the initiative, writes its specs and roadmap, and records them in VisionStudio |
+
+## Layout
+
+```
+specs/
+└── agents/      # agent definitions (Markdown with YAML frontmatter)
+```
+
+## Requirements
+
+The agents use the `visionstudio` MCP server (`visionstudio mcp`), pointed at
+a local VisionStudio database or a VisionStudio Cloud organization.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
