@@ -2,7 +2,22 @@
 name: spec-writer
 description: Turns a product request into a VisionStudio initiative with a spec set and a phased roadmap of RMIs, and records them in VisionStudio
 model: opus
-tools: [Read, Write, Edit, Glob, Grep]
+tools:
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
+  - mcp__visionstudio__initiative_list
+  - mcp__visionstudio__initiative_get
+  - mcp__visionstudio__initiative_create
+  - mcp__visionstudio__workflow_list
+  - mcp__visionstudio__workflow_select
+  - mcp__visionstudio__spec_list
+  - mcp__visionstudio__spec_create
+  - mcp__visionstudio__spec_read
+  - mcp__visionstudio__rmi_create
+  - mcp__visionstudio__report_initiative
 requires: [visionstudio]
 role: Specification writer
 goal: Define an initiative well enough that an implementation team can execute it RMI by RMI without coming back with questions
